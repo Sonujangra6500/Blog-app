@@ -43,7 +43,7 @@ const Comment = ({ comment, setToggle }) => {
             <Container>
                 <Name>{comment.username}</Name>
                 <StyledDate>{new Date(comment.date).toDateString()}</StyledDate>
-                { comment.username === account.username && <DeleteIcon key={comment._id} onClick={() => removeComment(e)} /> }
+                { comment.username === account.username && <DeleteIcon key={comment._id} onClick={(e) => removeComment(e)} /> }
             </Container>
             <Typography>{comment.comments}</Typography>
         </Component>

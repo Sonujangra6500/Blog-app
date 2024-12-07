@@ -44,7 +44,7 @@ const Signup = () => {
     }
     return (
         <div className="flex justify-center">
-            <div className="flex w-[500px]  shadow-lg py-4">
+            <div className="flex w-[500px]  shadow-lg py-4  bg-white">
                 <div className="w-full flex flex-col items-center">
                     <img className="w-[150px] mb-2" src={imageUrl} alt="img" />
                     <div className="flex flex-col items-center mb-4">

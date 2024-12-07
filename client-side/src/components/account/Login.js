@@ -42,8 +42,8 @@ const Login = ({ setIsAuthenticated }) => {
         }
     }
     return (
-        <div className="flex justify-center items-center ">
-            <div className="flex w-[500px] m-[20px] shadow-lg p-4">
+        <div className="flex justify-center items-center">
+            <div className="flex w-[500px] m-[20px] shadow-lg p-4  bg-white">
                 <div className="w-full flex flex-col items-center">
                     <img className="w-[250px] mb-4" src={imageUrl} alt="img" />
                     <div className="flex flex-col items-center mb-4">
