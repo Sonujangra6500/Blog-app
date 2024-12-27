@@ -1,6 +1,6 @@
 const { User, Post, Comment } = require("../models/Model.js")
 
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 // user login 
