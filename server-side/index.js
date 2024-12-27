@@ -32,7 +32,7 @@ DbConnect();
 
 
 
-let Port = process.env._PORT 
+let Port = process.env._PORT || 3030
 app.listen(Port, (req, res) => {
     console.log(`server run on Port no = ${Port}`)
 });
