@@ -27,7 +27,7 @@ const Posts = () => {
     const GetPost = async () => {
       try {
         setLoading(true);
-        const res = await axios.get('http://localhost:3030/user/getposts', {
+        const res = await axios.get('https://blog-app-o5hc.onrender.com/user/getposts', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
