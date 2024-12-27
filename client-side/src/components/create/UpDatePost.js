@@ -66,7 +66,7 @@ const UpDatePost = () => {
   useEffect(() => {
     setPost((prevPost) => ({
       ...prevPost,
-      username: account.username,
+      username: account.username, 
     }));
     if (file) {
       const picPreview = URL.createObjectURL(file);

@@ -8,7 +8,7 @@ const app = express();
 const router = require("./routes/router");
 
 dotenv.config();
-
+ 
 app.use(express.json());
 app.use(cors())
 app.use(express.urlencoded({ extended: true }));
