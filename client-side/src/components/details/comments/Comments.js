@@ -60,7 +60,7 @@ const Comments = ({ post }) => {
     const addComment = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("http://localhost:3030/user/addcomments", comment)
+            const res = await axios.post("https://blog-app-o5hc.onrender.com/user/addcomments", comment)
             if (res.data.success) {
                 setComment(initialValue)
                 setToggle(prev => !prev);
