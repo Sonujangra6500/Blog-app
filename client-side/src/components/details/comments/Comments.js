@@ -40,7 +40,7 @@ const Comments = ({ post }) => {
 
     useEffect(() => {
         const getData = async () => {
-            const res = await axios.get(`http://localhost:3030/user/getcomments/${post._id}`)
+            const res = await axios.get(`https://blog-app-o5hc.onrender.com/user/getcomments/${post._id}`)
             if (res.data.success) {
                 setComments(res.data.comments);
             }

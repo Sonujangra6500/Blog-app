@@ -9,7 +9,7 @@ const Logout = () => {
     useEffect(() => {
         const LogoutUser = async () => {
             try {
-                const res = await axios.post("http://localhost:3030/user/logout", {},
+                const res = await axios.post("https://blog-app-o5hc.onrender.com/user/logout", {},
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,

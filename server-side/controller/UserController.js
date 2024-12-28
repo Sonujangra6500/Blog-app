@@ -99,7 +99,7 @@ const CreatePost = async (req, res) => {
             return res.status(400).json({ message: "Picture is required", success: false });
         }
 
-        const pictureUrl = `http://localhost:3030/uploads/${req.file.filename}`;
+        const pictureUrl = `https://blog-app-o5hc.onrender.com/uploads/${req.file.filename}`;
 
         const existdata = await Post.findOne({ title });
         if (existdata) {
@@ -164,7 +164,7 @@ const UpDatePost = async (req, res) => {
         }
 
         const pictureUrl = req.file
-            ? `http://localhost:3030/uploads/${req.file.filename}`
+            ? `https://blog-app-o5hc.onrender.com/uploads/${req.file.filename}`
             : post.picture;
 
         const updatedPost = await Post.findByIdAndUpdate(
@@ -255,7 +255,7 @@ catch(error){
 
 // get comment  
 
-const GetComments = async (req, res) => {
+const GetComments = async (req, res) => { 
     try {
         const { id } = req.params;
 
@@ -295,4 +295,4 @@ const DeleteComment = async(req,res)=>{
     }}
 
 
-module.exports = { signup,DeletePost, login, CreatePost, GetPosts, UpDatePost, Logout, TokenBlacklisted,GetComments,DeleteComment,AddComments }
+module.exports = { signup, login, CreatePost, GetPosts, UpDatePost, Logout, TokenBlacklisted,GetComments,DeleteComment,AddComments }
