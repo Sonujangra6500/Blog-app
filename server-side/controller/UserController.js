@@ -295,4 +295,4 @@ const DeleteComment = async(req,res)=>{
     }}
 
 
-module.exports = { signup, login, CreatePost, GetPosts, UpDatePost, Logout, TokenBlacklisted,GetComments,DeleteComment,AddComments }
+module.exports = { signup, login, CreatePost, GetPosts,DeletePost, UpDatePost, Logout, TokenBlacklisted,GetComments,DeleteComment,AddComments }
