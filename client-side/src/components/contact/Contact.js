@@ -2,11 +2,9 @@ import { Box, styled, Typography, Link } from '@mui/material';
 import { Instagram, Email } from '@mui/icons-material';
 import Image from '../../assets/contact-background.png'
 const Banner = styled(Box)`
-<<<<<<< HEAD
+ 
     background-image: url(${Image});
-=======
-      background-image: url(http://mrtaba.ir/image/bg2.jpg);
->>>>>>> 16301914cc6eb248b804a7afee750b3f7d96a63d
+ 
     width: 100%;
     height: 50vh;
     background-position: left 0px top -100px;
