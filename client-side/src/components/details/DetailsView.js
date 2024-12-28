@@ -32,7 +32,7 @@ const DetailsView = () => {
   const deletePost = async(e)=>{
     e.preventDefault();
     try {//https://blog-app-o5hc.onrender.com
-        const res = await axios.delete(`http://localhost:3030/user/deletePost/${id}`)
+        const res = await axios.delete(`https://blog-app-o5hc.onrender.com/user/deletePost/${id}`)
         if(res.data.success){
           toastr.success(res.data.message, 'Success');
           navigate('/')
