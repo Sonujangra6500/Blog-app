@@ -164,7 +164,7 @@ const UpDatePost = async (req, res) => {
         }
 
         const pictureUrl = req.file
-            ? `http://localhost:3030/uploads/${req.file.filename}`
+            ? `https://blog-app-o5hc.onrender.com/uploads/${req.file.filename}`
             : post.picture;
 
         const updatedPost = await Post.findByIdAndUpdate(
