@@ -4,7 +4,10 @@ import { Box, Button, styled, Typography } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Comments from "./comments/Comments";
-
+import { useContext } from "react";
+import { MyContext } from "../context/DataProvider";
+import axios from "axios";
+import toastr from 'toastr';
 const StyledBox = styled(Box)`
   margin:1% 15%;
   width:full;
@@ -18,18 +21,28 @@ margin:10px 0 ;
 justify-Content:space-between;
 `
 const DetailsView = () => {
-
+  const { account } = useContext(MyContext);
   const navigate = useNavigate();
   const { state } = useLocation();
   const data = state?.data;
   const { id } = useParams();
-
-  const FilterData = data.filter((res) => {
+   const FilterData = data.filter((res) => {
     return res._id == id
   })
-
+  const deletePost = async(e)=>{
+    e.preventDefault();
+    try {//https://blog-app-o5hc.onrender.com
+        const res = await axios.delete(`http://localhost:3030/user/deletePost/${id}`)
+        if(res.data.success){
+          toastr.success(res.data.message, 'Success');
+          navigate('/')
+        }
+     }
+    catch (error) {
+        console.log(error)
+    }
+  }
   if (!FilterData) return <Spinner />;
-
   return (
     <>
       {FilterData.map((post) => {
@@ -39,12 +52,18 @@ const DetailsView = () => {
             <Typography sx={{ fontWeight: 'bold' }}
               variant="h4">{post.title}</Typography>
             <Typography>
-              <Button onClick={() => navigate(`/update/${post._id}`, { state: { val: post } })}>
-                <EditIcon />
-              </Button>
-              <Button>
-                <DeleteIcon />
-              </Button>
+              {account.username != post.username ? (
+                <div></div>)
+                : (<>
+                  <Button onClick={() => navigate(`/update/${post._id}`, { state: { val: post } })}>
+                    <EditIcon />
+                  </Button>
+                  <Button onClick={deletePost}>
+                    <DeleteIcon />
+                  </Button>
+                </>
+                )
+              }
             </Typography>
           </StyledTypography>
           <StyledTypography>

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { signup, login, CreatePost, GetPosts, Logout, TokenBlacklisted, UpDatePost, AddComments, GetComments, DeleteComment } = require('../controller/UserController');
+const { signup, login, CreatePost, GetPosts,DeletePost, Logout, TokenBlacklisted, UpDatePost, AddComments, GetComments, DeleteComment } = require('../controller/UserController');
 const { AuthMiddleware } = require('../middleware/AuthMiddleware');
 const { upload } = require('../Multer');
 
@@ -19,6 +19,8 @@ router.put('/updatepost/:id',AuthMiddleware,upload.single('picture'),UpDatePost)
 router.get('/getposts', AuthMiddleware, TokenBlacklisted, GetPosts);
 
 router.post('/addcomments',AddComments);
+
+router.delete('/deletePost/:id',DeletePost)
 
 router.get('/getcomments/:id',GetComments);
 

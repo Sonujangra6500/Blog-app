@@ -189,7 +189,18 @@ const UpDatePost = async (req, res) => {
             .json({ message: "Internal server error", success: false });
     }
 };
- 
+
+// 
+const DeletePost = async(req,res)=>{
+    try {
+        const { id } = req.params;
+        await Post.findByIdAndDelete(id);  
+        res.status(200).send({ message: 'Post  deleted successfully',success:true });
+    } catch (error) {
+        res.status(500).send({ message: 'Error deleting Post', error });
+    }
+}
+    
 // Remove token and Logout 
 
 const tokenBlacklist = new Set();
@@ -284,4 +295,4 @@ const DeleteComment = async(req,res)=>{
     }}
 
 
-module.exports = { signup, login, CreatePost, GetPosts, UpDatePost, Logout, TokenBlacklisted,GetComments,DeleteComment,AddComments }
+module.exports = { signup,DeletePost, login, CreatePost, GetPosts, UpDatePost, Logout, TokenBlacklisted,GetComments,DeleteComment,AddComments }
