@@ -99,7 +99,7 @@ const CreatePost = async (req, res) => {
             return res.status(400).json({ message: "Picture is required", success: false });
         }
 
-        const pictureUrl = `https://blog-app-o5hc.onrender.com/uploads/${req.file.filename}`;
+        const pictureUrl =  req.file.path;
 
         const existdata = await Post.findOne({ title });
         if (existdata) {
@@ -164,7 +164,7 @@ const UpDatePost = async (req, res) => {
         }
 
         const pictureUrl = req.file
-            ? `https://blog-app-o5hc.onrender.com/uploads/${req.file.filename}`
+            ?  req.file.path
             : post.picture;
 
         const updatedPost = await Post.findByIdAndUpdate(
