@@ -19,7 +19,7 @@ const Signup = () => {
     const UserRegister = async (e) => {
         try {
             e.preventDefault();
-            const res = await axios.post("http://localhost:3030/user/signup",
+            const res = await axios.post("https://blog-app-4w77.onrender.com/user/signup",
                 user
             )
             if (res.data.message) {

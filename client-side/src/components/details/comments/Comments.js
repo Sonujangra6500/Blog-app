@@ -40,7 +40,7 @@ const Comments = ({ post }) => {
 
     useEffect(() => {
         const getData = async () => {
-            const res = await axios.get(`http://localhost:3030/user/getcomments/${post._id}`)
+            const res = await axios.get(`https://blog-app-4w77.onrender.com/user/getcomments/${post._id}`)
             if (res.data.success) {
                 setComments(res.data.comments);
             }
@@ -60,7 +60,7 @@ const Comments = ({ post }) => {
     const addComment = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("http://localhost:3030/user/addcomments", comment)
+            const res = await axios.post("https://blog-app-4w77.onrender.com/user/addcomments", comment)
             if (res.data.success) {
                 setComment(initialValue)
                 setToggle(prev => !prev);

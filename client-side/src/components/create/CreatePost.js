@@ -90,7 +90,7 @@ const CreatePost = () => {
     formData.append("picture", post.picture);
 
     try {
-      const res = await axios.post("http://localhost:3030/user/createpost", formData, {
+      const res = await axios.post("https://blog-app-4w77.onrender.com/user/createpost", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
