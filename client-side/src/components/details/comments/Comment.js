@@ -35,7 +35,7 @@ const Comment = ({ comment, setToggle }) => {
     const { account } = useContext(MyContext)
     const removeComment = async (e) => {
         e.preventDefault();
-       await axios.delete(`https://blog-app-o5hc.onrender.com/user/deletecomment/${comment._id}`);
+       await axios.delete(`http://localhost:3030/user/deletecomment/${comment._id}`);
        setToggle(prev => !prev);
     }
     return (

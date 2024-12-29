@@ -20,7 +20,7 @@ const Login = ({ setIsAuthenticated }) => {
     const UserLogin = async (e) => {
         try {
             e.preventDefault();
-            const res = await axios.post("https://blog-app-o5hc.onrender.com/user/login",
+            const res = await axios.post("http://localhost:3030/user/login",
                 user
             )
             setIsAuthenticated(true)

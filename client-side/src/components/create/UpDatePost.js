@@ -87,7 +87,7 @@ const UpDatePost = () => {
     formData.append('createdDate', post.createdDate);
     formData.append('picture', file || post.picture);
     try {
-      const res = await axios.put(`https://blog-app-o5hc.onrender.com/user/updatepost/${id}`, formData, {
+      const res = await axios.put(`http://localhost:3030/user/updatepost/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${token}`,

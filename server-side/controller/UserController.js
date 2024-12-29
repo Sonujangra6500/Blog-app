@@ -99,7 +99,7 @@ const CreatePost = async (req, res) => {
             return res.status(400).json({ message: "Picture is required", success: false });
         }
 
-        const pictureUrl =  req.file.path;
+        const pictureUrl = req.file.path;
 
         const existdata = await Post.findOne({ title });
         if (existdata) {
